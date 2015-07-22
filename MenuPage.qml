@@ -21,11 +21,11 @@ Rectangle {
         id: availableitemswindowtitle
         anchors.horizontalCenter: parent.horizontalCenter
         anchors.top: parent.top
-        anchors.topMargin: page.height*0.03
+        anchors.topMargin: page.height*0.04
         text: "AVAILABLE ITEMS"
         font.family: "Avenir"
         font.letterSpacing: 2
-        font.pixelSize: 30
+        font.pixelSize: page.height*0.02
     }
     Rectangle {
         id: item1
@@ -44,7 +44,6 @@ Rectangle {
             anchors.rightMargin: parent? parent.width*0.05 : 25
             anchors.verticalCenter: parent.verticalCenter
             width: page.width*0.15
-            height: page.height*0.07
             validator: IntValidator {bottom: 0; top: 9;}
             placeholderText: "0"
         }
@@ -56,7 +55,6 @@ Rectangle {
             anchors.topMargin: parent.height*0.25
             text: "Water Balloon"
             font.family: "Avenir"
-            font.pixelSize: 25
         }
         Text {
             id: itemweight1
@@ -66,7 +64,6 @@ Rectangle {
             anchors.bottomMargin: parent.height*0.22
             text: "100"
             font.family: "Avenir"
-            font.pixelSize: 25
         }
         Text {
             x: itemweight1.x + itemweight1.width + (page.width*0.02)
@@ -74,7 +71,6 @@ Rectangle {
             anchors.bottomMargin: parent.height*0.22
             text: "g"
             font.family: "Avenir"
-            font.pixelSize: 25
         }
         Text {
             anchors.left: parent.left
@@ -83,7 +79,6 @@ Rectangle {
             anchors.topMargin: parent.height*0.25
             text: "$"
             font.family: "Avenir"
-            font.pixelSize: 25
         }
         Text {
             id: itemprice1
@@ -93,7 +88,6 @@ Rectangle {
             anchors.topMargin: parent.height*0.25
             text: "2.15"
             font.family: "Avenir"
-            font.pixelSize: 25
         }
     }
     Rectangle {
@@ -111,7 +105,6 @@ Rectangle {
             anchors.rightMargin: page.width*0.05
             anchors.verticalCenter: parent.verticalCenter
             width: page.width*0.15
-            height: page.height*0.07
             validator: IntValidator {bottom: 0; top: 9;}
             placeholderText: "0"
         }
@@ -123,7 +116,6 @@ Rectangle {
             anchors.topMargin: parent.height*0.25
             text: "Okra"
             font.family: "Avenir"
-            font.pixelSize: 25
         }
         Text {
             id: itemweight2
@@ -133,7 +125,6 @@ Rectangle {
             anchors.bottomMargin: parent.height*0.22
             text: "100"
             font.family: "Avenir"
-            font.pixelSize: 25
         }
         Text {
             x: itemweight2.x + itemweight2.width + (page.width*0.02)
@@ -141,7 +132,6 @@ Rectangle {
             anchors.bottomMargin: parent.height*0.22
             text: "g"
             font.family: "Avenir"
-            font.pixelSize: 25
         }
         Text {
             anchors.left: parent.left
@@ -150,7 +140,6 @@ Rectangle {
             anchors.topMargin: parent.height*0.25
             text: "$"
             font.family: "Avenir"
-            font.pixelSize: 25
         }
         Text {
             id: itemprice2
@@ -160,7 +149,6 @@ Rectangle {
             anchors.topMargin: parent.height*0.25
             text: "2.20"
             font.family: "Avenir"
-            font.pixelSize: 25
         }
     }
     Rectangle {
@@ -180,7 +168,6 @@ Rectangle {
             anchors.rightMargin: page.width*0.05
             anchors.verticalCenter: parent.verticalCenter
             width: page.width*0.15
-            height: page.height*0.07
             validator: IntValidator {bottom: 0; top: 9;}
             placeholderText: "0"
         }
@@ -192,7 +179,6 @@ Rectangle {
             anchors.topMargin: parent.height*0.25
             text: "Iced Coffee"
             font.family: "Avenir"
-            font.pixelSize: 25
         }
         Text {
             id: itemweight3
@@ -202,7 +188,6 @@ Rectangle {
             anchors.bottomMargin: parent.height*0.22
             text: "200"
             font.family: "Avenir"
-            font.pixelSize: 25
         }
         Text {
             x: itemweight3.x + itemweight3.width + (page.width*0.02)
@@ -210,7 +195,6 @@ Rectangle {
             anchors.bottomMargin: parent.height*0.22
             text: "g"
             font.family: "Avenir"
-            font.pixelSize: 25
         }
         Text {
             anchors.left: parent.left
@@ -219,7 +203,6 @@ Rectangle {
             anchors.topMargin: parent.height*0.25
             text: "$"
             font.family: "Avenir"
-            font.pixelSize: 25
         }
         Text {
             id: itemprice3
@@ -229,7 +212,6 @@ Rectangle {
             anchors.topMargin: parent.height*0.25
             text: "5.00"
             font.family: "Avenir"
-            font.pixelSize: 25
         }
     }
     Rectangle {
@@ -247,7 +229,6 @@ Rectangle {
             anchors.rightMargin: page.width*0.05
             anchors.verticalCenter: parent.verticalCenter
             width: page.width*0.15
-            height: page.height*0.07
             validator: IntValidator {bottom: 0; top: 9;}
             placeholderText: "0"
         }
@@ -259,7 +240,6 @@ Rectangle {
             anchors.topMargin: parent.height*0.25
             text: "Mangoes"
             font.family: "Avenir"
-            font.pixelSize: 25
         }
         Text {
             id: itemweight4
@@ -269,7 +249,6 @@ Rectangle {
             anchors.bottomMargin: parent.height*0.22
             text: "100"
             font.family: "Avenir"
-            font.pixelSize: 25
         }
         Text {
             x: itemweight4.x + itemweight4.width + (page.width*0.02)
@@ -277,7 +256,6 @@ Rectangle {
             anchors.bottomMargin: parent.height*0.22
             text: "g"
             font.family: "Avenir"
-            font.pixelSize: 25
         }
         Text {
             anchors.left: parent.left
@@ -286,7 +264,6 @@ Rectangle {
             anchors.topMargin: parent.height*0.25
             text: "$"
             font.family: "Avenir"
-            font.pixelSize: 25
         }
         Text {
             id: itemprice4
@@ -296,7 +273,6 @@ Rectangle {
             anchors.topMargin: parent.height*0.25
             text: "3.00"
             font.family: "Avenir"
-            font.pixelSize: 25
         }
     }
     Rectangle {
@@ -319,7 +295,6 @@ Rectangle {
             text: "Total Weight:"
             font.family: "Avenir"
             style: Text.Normal
-            font.pixelSize: 25
         }
         Text {
             id: totalpricetext
@@ -329,7 +304,6 @@ Rectangle {
             anchors.bottomMargin: parent.height*0.25
             text: "Total Price:"
             font.family: "Avenir"
-            font.pixelSize: 25
         }
         Text {
             id: maxweighttext
@@ -338,7 +312,6 @@ Rectangle {
             anchors.topMargin: parent.height*0.22
             text: "/ 400 g"
             font.family: "Avenir"
-            font.pixelSize: 25
         }
         Text {
             id: dollarsign5
@@ -348,7 +321,6 @@ Rectangle {
             anchors.bottomMargin: parent.height*0.22
             text: "$"
             font.family: "Avenir"
-            font.pixelSize: 25
         }
         Text {
             id: totalweight
@@ -356,7 +328,6 @@ Rectangle {
                 if (totalweight.text > 400) {"#D60000"}
                 else {"black"}
             font.family: "Avenir"
-            font.pixelSize: 25
             anchors.left: parent.left
             anchors.leftMargin: page.width*0.4
             anchors.top: parent.top
@@ -366,7 +337,6 @@ Rectangle {
         Text {
             id: totalprice
             font.family: "Avenir"
-            font.pixelSize: 25
             x: dollarsign5.x + dollarsign5.width + page.width*0.02
             anchors.bottom: parent.bottom
             anchors.bottomMargin: parent.height*0.22
@@ -376,7 +346,6 @@ Rectangle {
     Button {
         id: checkoutButton
         width: backButton1.width
-        height: page.height * 0.07
         anchors.horizontalCenter: parent.horizontalCenter
         anchors.bottom: parent.bottom
         anchors.bottomMargin: (page.height*0.05) + (clearButton.height) + ((page.height*0.02)*2) + (backButton1.height)
@@ -404,7 +373,6 @@ Rectangle {
         radius: 5
         Text {
             color: "white"
-            font.pixelSize: 20
             anchors.horizontalCenter: parent.horizontalCenter
             anchors.verticalCenter: parent.verticalCenter
             text: "Please remove some items."
@@ -424,7 +392,6 @@ Rectangle {
         radius: 5
         Text {
             color: "white"
-            font.pixelSize: 20
             anchors.horizontalCenter: parent.horizontalCenter
             anchors.verticalCenter: parent.verticalCenter
             text: "You have no items in your cart."
