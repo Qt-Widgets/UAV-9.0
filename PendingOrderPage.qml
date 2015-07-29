@@ -1,5 +1,6 @@
 import QtQuick 2.0
 import QtQuick.Controls 1.3
+import QtQuick.Controls.Styles 1.3
 
 Rectangle {
     width: parent? parent.width : 500
@@ -24,8 +25,17 @@ Rectangle {
         font.family: "Avenir"
         font.letterSpacing: 2
     }
+    Text {
+        id: nopendingorders
+        visible: if (vendor_handler.valid1) {false} else {true}
+        anchors.horizontalCenter: parent.horizontalCenter
+        anchors.top: parent.top
+        anchors.topMargin: 100
+        text: "There are currently no pending orders."
+        font.family: "Avenir"
+        font.letterSpacing: 2
+    }
 
-    //extract order 1 information
     Text {
         id: order1_click
         text: "0"
@@ -45,7 +55,6 @@ Rectangle {
         id: order1
         y: 150
         text:
-
         if (vendor_handler.delivery == 1) {
             vendor_handler.name1 + "\n" +
             vendor_handler.order1 +
@@ -69,25 +78,26 @@ Rectangle {
         MouseArea{
             id: order1_area
             anchors.fill: parent
-            onClicked: if (vendor_handler.delivery != 1) {
-                           vendor_handler.delivery = 1
-                       }
-                       else if (vendor_handler.delivery == 1) {
-                            vendor_handler.delivery = 0
-                       }
+            onClicked:
+                if (vendor_handler.delivery != 1) {
+                   vendor_handler.delivery = 1
+                }
+                else if (vendor_handler.delivery == 1) {
+                    vendor_handler.delivery = 0
+                }
         }
         Button {
             id: deliverorder1_button
             y: if (vendor_handler.delivery == 1) {order1.y + order1.height - 100}
                else if (vendor_handler.delivery == 2) {order2.y + order2.height - 100}
                else if (vendor_handler.delivery == 3) {order3.y + order3.height - 100}
-            visible: (vendor_handler.delivery != 0)
+            visible: if (vendor_handler.delivery != 0) {true} else {false}
             text: "Deliver Order"
             anchors.leftMargin: 35
             onClicked: {
                 pending_order_page.visible = false
                 battery_status_page.visible = true
-                //backButton5.visible = false
+                backButton5.visible = true
             }
         }
     }
@@ -117,6 +127,7 @@ Rectangle {
         border.width: 1
         visible: vendor_handler.valid1
     }
+
     Text {
         id: order2_time
         y: order2.y
@@ -131,7 +142,7 @@ Rectangle {
         id: order2
         y: order1_line.y + 25
         text:
-              if (vendor_handler.delivery == 2){
+            if (vendor_handler.delivery == 2){
               vendor_handler.name2 + "\n" +
               vendor_handler.order2 +
               "Total Price: $" + (vendor_handler.price2).toFixed(2) +
@@ -142,7 +153,7 @@ Rectangle {
               "\n" + vendor_handler.city2 + ", " + vendor_handler.state2 + " " + vendor_handler.zip2 +
               "\n" + vendor_handler.region2
               }
-              else {vendor_handler.name2 + " \n\nItems: "} // + order2_number.text}
+            else {vendor_handler.name2 + " \n\nItems: "} // + order2_number.text}
         visible: vendor_handler.valid2
         anchors.right: parent.right
         anchors.rightMargin: 35
@@ -176,6 +187,7 @@ Rectangle {
         border.color: "#6E6E6E"
         visible: vendor_handler.valid2
     }
+
     Text {
         id: order3_time
         y: order3.y
@@ -201,7 +213,6 @@ Rectangle {
               "\n" + vendor_handler.region3
               }
               else{vendor_handler.name3 + " \n\nItems: "}// + order3_number.text}
-
         visible: vendor_handler.valid3
         anchors.right: parent.right
         anchors.rightMargin: 35
@@ -236,29 +247,23 @@ Rectangle {
         border.color: "#6E6E6E"
         visible: vendor_handler.valid3
     }
+
     Button {
         id: backButton4
         anchors.horizontalCenter: parent.horizontalCenter
-        anchors.bottom: parent.bottom
-        anchors.bottomMargin: 240
-        visible: (vendor_handler.delivery == 0)
+        y: order3.y + order3.height + 100
         text: "Return to homepage"
-        z:0
         onClicked:{
             pending_order_page.visible = false
             opening_page.visible = true
         }
     }
     Button {
-       id: viewbatterystatus_button
-       anchors.horizontalCenter: parent.horizontalCenter
-//            anchors.bottom: parent.bottom
-//            anchors.bottomMargin: 60
+        id: viewbatterystatus_button
+        anchors.horizontalCenter: parent.horizontalCenter
         y: backButton4.y + backButton4.height + page.height*0.05
         width: backButton4.width
         text: "View Battery Status"
-        visible: (vendor_handler.delivery == 0)
-
         onClicked: {
             pending_order_page.visible = false
             battery_status_page.visible = true

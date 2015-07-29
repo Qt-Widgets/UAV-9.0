@@ -1,5 +1,6 @@
 import QtQuick 2.0
 import QtQuick.Controls 1.3
+import QtQuick.Controls.Styles 1.3
 
 Rectangle {
     width: parent? parent.width : 500
@@ -17,7 +18,6 @@ Rectangle {
         source: "qrc:/logo.png"
         asynchronous : true
     }
-
     Text {
         anchors.horizontalCenter: parent.horizontalCenter
         anchors.top: parent.top
@@ -96,8 +96,6 @@ Rectangle {
         y: 400
         anchors.left: parent.left
         anchors.leftMargin: page.width * 0.15
-  //    anchors.right: parent.right
-  //    anchors.rightMargin: page.height * 0.15
         wrapMode: Text.WordWrap
         font.letterSpacing: 2
         visible: true
@@ -120,13 +118,11 @@ Rectangle {
     Button {
         id: proceed_button
         anchors.horizontalCenter: parent.horizontalCenter
-        y: batteryinfo.y + batteryinfo.height + 50
+        anchors.bottom: parent.bottom
+        anchors.bottomMargin: page.height * 0.2
         visible: battery_green.visible & (vendor_handler.delivery != 0)
         text: "Proceed"
         onClicked: {
-     //       order1_click.text = "0"
-     //       order2_click.text = "0"
-     //       order3_click.text = "0"
             battery_status_page.visible = false
             vendor_track_page.visible = true
         }
@@ -134,7 +130,8 @@ Rectangle {
     Rectangle {
         id: batterydenialrectangle
         anchors.horizontalCenter: parent.horizontalCenter
-        y: proceed_button.y
+        anchors.bottom: parent.bottom
+        anchors.bottomMargin: page.height * 0.2
         width: page.width * .6
         height: proceed_button.height
         color: "#D60000"
@@ -151,27 +148,14 @@ Rectangle {
     Button {
         id: backButton5
         anchors.horizontalCenter: parent.horizontalCenter
-        y: rectangle1.y + rectangle1.height + 150
+        anchors.bottom: parent.bottom
+        anchors.bottomMargin: page.height * 0.1
         text: "Go Back"
         onClicked: {
             battery_status_page.visible = false
             pending_order_page.visible = true
-            backButton5.visible = false
             proceed_button.visible = true
             cancel_button.visible = true
         }
     }
-    Button {
-        id: cancel_button
-        anchors.horizontalCenter: parent.horizontalCenter
-        y: proceed_button.y + proceed_button.height + 40
-        text: "Cancel"
-        width: if (backButton5.visible == true) {backButton5.width}
-               else {proceed_button.width}
-        onClicked:{
-            battery_status_page.visible = false
-            pending_order_page.visible = true
-        }
-    }
 }
-

@@ -1,5 +1,6 @@
 import QtQuick 2.0
 import QtQuick.Controls 1.3
+import QtQuick.Controls.Styles 1.3
 import HKUST 1.0
 
 Rectangle {
@@ -13,14 +14,22 @@ Rectangle {
         anchors.horizontalCenter: parent.horizontalCenter
         anchors.top: parent.top
         anchors.topMargin: page.height*.2
-        width: page.width*.25
-        height: page.width*.25
-        source: "qrc:/logo.png"
+        width: page.width*.3
+        height: page.width*.3
+        source: "qrc:/images/logo.png"
         asynchronous : true
+    }
+    Text {
+        text: "KEE WAHWAH BAKERY"
+        anchors.horizontalCenter: parent.horizontalCenter
+        y:logo.y + logo.height + 50
+        font.family: "Avenir"
+        font.pixelSize: page.height*0.02
+        font.letterSpacing: 2
     }
     Button {
         anchors.horizontalCenter: parent.horizontalCenter
-        y: logo.y + logo.height + 100
+        y: logo.y + logo.height + 125
         width: userloginButton.width
         id: vendorButton
         text: "Vendor Login"
@@ -44,7 +53,7 @@ Rectangle {
         visible: true
         y: userloginButton.y + userloginButton.height + 30
         width: userloginButton.width
-        id: aboutButton
+        id: manualControlButton
         text: "About"
         onClicked: {
             opening_page.visible = false
