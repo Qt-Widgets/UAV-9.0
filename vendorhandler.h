@@ -16,6 +16,9 @@ class VendorHandler : public QQuickItem {
     Q_PROPERTY(QString name1 READ name1 WRITE setName1 NOTIFY name1Changed)
     Q_PROPERTY(QString name2 READ name2 WRITE setName2 NOTIFY name2Changed)
     Q_PROPERTY(QString name3 READ name3 WRITE setName3 NOTIFY name3Changed)
+    Q_PROPERTY(QString num1 READ num1 WRITE setNumber1 NOTIFY num1Changed)
+    Q_PROPERTY(QString num2 READ num2 WRITE setNumber2 NOTIFY num2Changed)
+    Q_PROPERTY(QString num3 READ num3 WRITE setNumber3 NOTIFY num3Changed)
     Q_PROPERTY(QString street1 READ street1 WRITE setStreet1 NOTIFY street1Changed)
     Q_PROPERTY(QString street2 READ street2 WRITE setStreet2 NOTIFY street2Changed)
     Q_PROPERTY(QString street3 READ street3 WRITE setStreet3 NOTIFY street3Changed)
@@ -55,6 +58,9 @@ signals:
     void name1Changed();
     void name2Changed();
     void name3Changed();
+    void num1Changed();
+    void num2Changed();
+    void num3Changed();
     void street1Changed();
     void street2Changed();
     void street3Changed();
@@ -88,6 +94,7 @@ signals:
 private:
     bool order_valid[3];
     QString order[3];
+    QString order_num[3];
     QString order_name[3];
     QString order_street[3];
     QString order_city[3];
@@ -117,6 +124,9 @@ private:
     QString name1();
     QString name2();
     QString name3();
+    QString num1();
+    QString num2();
+    QString num3();
     QString street1();
     QString street2();
     QString street3();
@@ -151,6 +161,9 @@ private:
     void setName1(QString n);
     void setName2(QString n);
     void setName3(QString n);
+    void setNumber1(QString num);
+    void setNumber2(QString num);
+    void setNumber3(QString num);
     void setStreet1(QString s);
     void setStreet2(QString s);
     void setStreet3(QString s);

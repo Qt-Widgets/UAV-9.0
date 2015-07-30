@@ -241,6 +241,7 @@ Rectangle {
                 vendor_handler.name1 = address_page_handler.name
                 vendor_handler.street1 = address_page_handler.street
                 vendor_handler.city1 = address_page_handler.city
+                vendor_handler.num1 = menu_page_handler.num1 * 1 + menu_page_handler.num2 * 1 + menu_page_handler.num3 * 1 + menu_page_handler.num4 * 1
                 // we can add this later
                 // order1_number.text = (quantity1.text * 1) + (quantity2.text * 1) + (quantity3.text * 1) + (quantity4.text * 1)
                 vendor_handler.state1 = address_page_handler.state
@@ -248,19 +249,20 @@ Rectangle {
                 vendor_handler.region1 = address_page_handler.region
                 vendor_handler.order1 = ""
                 if (menu_page_handler.num1 > 0)
-                    vendor_handler.order1 += menu_page_handler.num1 + "\t" + "Egg Tart\n";
+                    vendor_handler.order1 += menu_page_handler.num1 + " " + "Egg Tart\n";
                 if (menu_page_handler.num2 > 0)
-                    vendor_handler.order1 += menu_page_handler.num2 + "\t" + "Pineapple Bun\n";
+                    vendor_handler.order1 += menu_page_handler.num2 + " " + "Pineapple Bun\n";
                 if (menu_page_handler.num3 > 0)
-                    vendor_handler.order1 += menu_page_handler.num3 + "\t" + "Iced Coffee\n";
+                    vendor_handler.order1 += menu_page_handler.num3 + " " + "Iced Coffee\n";
                 if (menu_page_handler.num4 > 0)
-                    vendor_handler.order1 += menu_page_handler.num4 + "\t " + "Milk Tea\n";
+                    vendor_handler.order1 += menu_page_handler.num4 + " " + "Milk Tea\n";
                 vendor_handler.price1 = menu_page_handler.total;
                 vendor_handler.time1 = Qt.formatTime(new Date(),"hh:mm");
                 vendor_handler.valid1 = true
             }
             else if (!vendor_handler.valid2) {
                 vendor_handler.name2 = address_page_handler.name
+                vendor_handler.num2 = menu_page_handler.num1 * 1 + menu_page_handler.num2 * 1 + menu_page_handler.num3 * 1 + menu_page_handler.num4 * 1
                 vendor_handler.street2 = address_page_handler.street
                 vendor_handler.city2 = address_page_handler.city
                 vendor_handler.state2 = address_page_handler.state
@@ -268,19 +270,20 @@ Rectangle {
                 vendor_handler.region2 = address_page_handler.region
                 vendor_handler.order2 = ""
                 if (menu_page_handler.num1 > 0)
-                    vendor_handler.order2 += menu_page_handler.num1 + "\t" + "Egg Tart\n";
+                    vendor_handler.order2 += menu_page_handler.num1 + " " + "Egg Tart\n";
                 if (menu_page_handler.num2 > 0)
-                    vendor_handler.order2 += menu_page_handler.num2 + "\t" + "Pineapple Bun\n";
+                    vendor_handler.order2 += menu_page_handler.num2 + " " + "Pineapple Bun\n";
                 if (menu_page_handler.num3 > 0)
-                    vendor_handler.order2 += menu_page_handler.num3 + "\t" + "Iced Coffee\n";
+                    vendor_handler.order2 += menu_page_handler.num3 + " " + "Iced Coffee\n";
                 if (menu_page_handler.num4 > 0)
-                    vendor_handler.order2 += menu_page_handler.num4 +  "\t " + "Milk Tea\n";
+                    vendor_handler.order2 += menu_page_handler.num4 + " " + "Milk Tea\n";
                vendor_handler.price2 = menu_page_handler.total;
                vendor_handler.time2 = Qt.formatTime(new Date(),"hh:mm")
                vendor_handler.valid2 = true
            }
            else if (!vendor_handler.valid3){
                vendor_handler.name3 = address_page_handler.name
+               vendor_handler.num3 = menu_page_handler.num1 * 1 + menu_page_handler.num2 * 1 + menu_page_handler.num3 * 1 + menu_page_handler.num4 * 1
                vendor_handler.street3 = address_page_handler.street
                vendor_handler.city3 = address_page_handler.city
                vendor_handler.state3 = address_page_handler.state
@@ -288,13 +291,13 @@ Rectangle {
                vendor_handler.region3 = address_page_handler.region
                vendor_handler.order3 = ""
                if (menu_page_handler.num1 > 0)
-                   vendor_handler.order3 += menu_page_handler.num1 + "\t" + "Egg Tart\n";
+                   vendor_handler.order3 += menu_page_handler.num1 + " " + "Egg Tart\n";
                if (menu_page_handler.num2 > 0)
-                   vendor_handler.order3 += menu_page_handler.num2 + "\t" + "Pineapple Bun\n";
+                   vendor_handler.order3 += menu_page_handler.num2 + " " + "Pineapple Bun\n";
                if (menu_page_handler.num3 > 0)
-                   vendor_handler.order3 += menu_page_handler.num3 + "\t" + "Iced Coffee\n";
+                   vendor_handler.order3 += menu_page_handler.num3 + " " + "Iced Coffee\n";
                if (menu_page_handler.num4 > 0)
-                   vendor_handler.order3 += menu_page_handler.num4 +  "\t " + "Milk Tea\n";
+                   vendor_handler.order3 += menu_page_handler.num4 + " " + "Milk Tea\n";
                vendor_handler.price3 = menu_page_handler.total;
                vendor_handler.time3 = Qt.formatTime(new Date(),"hh:mm")
                vendor_handler.valid3 = true

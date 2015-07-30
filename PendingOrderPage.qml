@@ -66,7 +66,7 @@ Rectangle {
             "\n" + vendor_handler.city1 + ", " + vendor_handler.state1 + " " + vendor_handler.zip1 +
             "\n" + vendor_handler.region1
          }
-        else {vendor_handler.name1 + " \n\nItems: " } //+ order1_number.text
+        else {vendor_handler.name1 + " \n\nItems: " + vendor_handler.num1} //+ order1_number.text
         visible: vendor_handler.valid1
         anchors.right: parent.right
         anchors.rightMargin: 35
@@ -153,7 +153,7 @@ Rectangle {
               "\n" + vendor_handler.city2 + ", " + vendor_handler.state2 + " " + vendor_handler.zip2 +
               "\n" + vendor_handler.region2
               }
-            else {vendor_handler.name2 + " \n\nItems: "} // + order2_number.text}
+            else {vendor_handler.name2 + " \n\nItems: " + vendor_handler.num2} // + order2_number.text}
         visible: vendor_handler.valid2
         anchors.right: parent.right
         anchors.rightMargin: 35
@@ -212,7 +212,7 @@ Rectangle {
               "\n" + vendor_handler.city3 + ", " + vendor_handler.state3 + " " + vendor_handler.zip3 +
               "\n" + vendor_handler.region3
               }
-              else{vendor_handler.name3 + " \n\nItems: "}// + order3_number.text}
+              else{vendor_handler.name3 + " \n\nItems: " + vendor_handler.num3}// + order3_number.text}
         visible: vendor_handler.valid3
         anchors.right: parent.right
         anchors.rightMargin: 35

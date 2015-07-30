@@ -8,6 +8,9 @@ VendorHandler::VendorHandler(QQuickItem *parent): QQuickItem(parent),
     order[0] = "2 Iced Coffee\n";
     order[1] = "";
     order[2] = "";
+    order_num[0] = "2";
+    order_num[1] = "";
+    order_num[2] = "";
     order_name[0] = "Vinh N.";
     order_name[1] = "";
     order_name[2] = "";
@@ -37,6 +40,7 @@ VendorHandler::VendorHandler(QQuickItem *parent): QQuickItem(parent),
 void VendorHandler::pass2to1() {
     setValid1(true);
     setName1(name2());
+    setNumber1(num2());
     setStreet1(street2());
     setCity1(city2());
     setState1(state2());
@@ -49,6 +53,7 @@ void VendorHandler::pass2to1() {
 void VendorHandler::pass3to2() {
     setValid2(true);
     setName2(name3());
+    setNumber2(num3());
     setStreet2(street3());
     setCity2(city3());
     setState2(state3());
@@ -61,6 +66,7 @@ void VendorHandler::pass3to2() {
 void VendorHandler::reset1() {
     setValid1(false);
     setName1("");
+    setNumber1("");
     setStreet1("");
     setCity1("");
     setState1("");
@@ -73,6 +79,7 @@ void VendorHandler::reset1() {
 void VendorHandler::reset2() {
     setValid2(false);
     setName2("");
+    setNumber2("");
     setStreet2("");
     setCity2("");
     setState2("");
@@ -85,6 +92,7 @@ void VendorHandler::reset2() {
 void VendorHandler::reset3() {
     setValid3(false);
     setName3("");
+    setNumber3("");
     setStreet3("");
     setCity3("");
     setState3("");
@@ -143,6 +151,18 @@ QString VendorHandler::name2() {
 
 QString VendorHandler::name3() {
     return order_name[2];
+}
+
+QString VendorHandler::num1() {
+    return order_num[0];
+}
+
+QString VendorHandler::num2() {
+    return order_num[1];
+}
+
+QString VendorHandler::num3() {
+    return order_num[2];
 }
 
 QString VendorHandler::street1() {
@@ -312,6 +332,28 @@ void VendorHandler::setName3(QString n){
         emit name3Changed();
     }
 }
+
+void VendorHandler::setNumber1(QString num){
+    if (order_num[0].compare(num)) {
+        order_num[0] = num;
+        emit num1Changed();
+    }
+}
+
+void VendorHandler::setNumber2(QString num){
+    if(order_num[1].compare(num)){
+        order_num[1] = num;
+        emit num2Changed();
+    }
+}
+
+void VendorHandler::setNumber3(QString num){
+    if (order_num[2].compare(num)) {
+        order_num[2] = num;
+        emit num3Changed();
+    }
+}
+
 
 void VendorHandler::setStreet1(QString s){
     if(order_street[0].compare(s)){
