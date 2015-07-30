@@ -101,7 +101,7 @@ ApplicationWindow {
 
     DroneLocationPage {
         id: drone_location_page
-        visible: false
+        visible: true
     }
 
     MenuPage{
