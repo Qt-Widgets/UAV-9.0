@@ -16,7 +16,7 @@ Rectangle {
         anchors.bottomMargin: 20
         width: 50
         height: 50
-        source: "qrc:/logo.png"
+        source: "qrc:/logo.jpg"
         asynchronous : true
     }
     Text {
