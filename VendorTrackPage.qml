@@ -356,6 +356,7 @@ Rectangle {
             }
             delivered_validation.text = ""
             returned_validation.text = ""
+            vendor_handler.delivery = "0"
         }
     }
     Button {
