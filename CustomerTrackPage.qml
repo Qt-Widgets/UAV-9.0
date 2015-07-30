@@ -41,14 +41,7 @@ Rectangle {
         country:  address_page_handler.region
         postalCode:  address_page_handler.zip
     }
-    MapPolyline {
-        line.width: 3
-        line.color: 'green'
-        path: [
-            { latitude: vendor_handler.latitude, longitude: vendor_handler.longitude },
-            { latitude: customerlat.text, longitude: customerlong.text }
-        ]
-    }
+
     Map {
         id: map
         plugin: osmplugin
@@ -61,14 +54,23 @@ Rectangle {
         signal resetState()
 
         center {
-            latitude: 22.336400
-            longitude: 114.265466
+            latitude: vendor_handler.latitude
+            longitude: vendor_handler.longitude
         }
 
         gesture.flickDeceleration: 3000
         gesture.enabled: true
 
         // HOME
+        MapPolyline {
+            line.width: 3
+            line.color: 'green'
+            path: [
+                { latitude: vendor_handler.latitude, longitude: vendor_handler.longitude },
+                { latitude: customerlat.text, longitude: customerlong.text }
+            ]
+        }
+
         MapCircle {
             id: homecoordinates
             center {
@@ -76,8 +78,11 @@ Rectangle {
                 longitude: 114.265466
             }
 
-            radius: if (map.zoomLevel < 13) {200}
-                    else {20}
+            radius: if (map.zoomLevel < 14) {450}
+                    else if (map.zoomLevel < 15) {200}
+                    else if (map.zoomLevel < 16) {100}
+                    else if (map.zoomLevel < 17) {30}
+                    else {10}
 
             color: "#FF4747"
             border.width: 1
@@ -131,8 +136,8 @@ Rectangle {
             query: geocodeAddress
             onLocationsChanged:
             {
-                map.center.latitude = get(0).coordinate.latitude
-                map.center.longitude = get(0).coordinate.longitude
+              //  map.center.latitude = get(0).coordinate.latitude
+              //  map.center.longitude = get(0).coordinate.longitude
                 customerlat.text = get(0).coordinate.latitude
                 customerlong.text = get(0).coordinate.longitude
             }
@@ -141,7 +146,11 @@ Rectangle {
         Component {
             id: pointDelegate
             MapCircle {
-                radius: 5000/map.zoomLevel
+                radius: if (map.zoomLevel < 14) {450}
+                        else if (map.zoomLevel < 15) {200}
+                        else if (map.zoomLevel < 16) {100}
+                        else if (map.zoomLevel < 17) {30}
+                        else {10}
                 color: "#F666FF"
                 opacity: 0.5
                 center {

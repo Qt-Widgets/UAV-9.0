@@ -66,8 +66,8 @@ Rectangle {
             height: tracking_drone.height
             zoomLevel: mapslider1.value
             center {
-                latitude: 22.3362535
-                longitude: 114.2629409
+                latitude: targetlatitude.text
+                longitude: targetlongitude.text
             }
 
             MapPolyline {
@@ -86,8 +86,11 @@ Rectangle {
 
             MapCircle {
                 id: point
-                radius: if (mapslider1.value < 13) {200}
-                        else {30}
+                radius: if (tracking_drone_map.zoomLevel < 14) {450}
+                        else if (tracking_drone_map.zoomLevel < 15) {200}
+                        else if (tracking_drone_map.zoomLevel < 16) {100}
+                        else if (tracking_drone_map.zoomLevel < 17) {30}
+                        else {10}
                 color: "#46a2da"
                 border.color: "#000000"
                 border.width: 2
@@ -104,8 +107,8 @@ Rectangle {
                 autoUpdate: true
                 query: fromAddress
                 onLocationsChanged: {
-                        tracking_drone_map.center.latitude = get(0).coordinate.latitude
-                        tracking_drone_map.center.longitude = get(0).coordinate.longitude
+                   //     tracking_drone_map.center.latitude = get(0).coordinate.latitude
+                   //     tracking_drone_map.center.longitude = get(0).coordinate.longitude
                         targetlatitude.text = get(0).coordinate.latitude
                         targetlongitude.text = get(0).coordinate.longitude
                 }
@@ -115,8 +118,11 @@ Rectangle {
                 id: pointDelegate1
                 MapCircle {
                     id: point2
-                    radius: if (mapslider1.value < 13) {200}
-                            else {30}
+                    radius: if (tracking_drone_map.zoomLevel < 14) {450}
+                            else if (tracking_drone_map.zoomLevel < 15) {200}
+                            else if (tracking_drone_map.zoomLevel < 16) {100}
+                            else if (tracking_drone_map.zoomLevel < 17) {30}
+                            else {10}
                     color: "#65E01F"
                     border.color: "#000000"
                     border.width: 2
@@ -324,7 +330,7 @@ Rectangle {
         onClicked: {
             vendor_track_page.visible = false
             pending_order_page.visible = true
-            if (display_deliverystatus.text == "Returned" | delivered_validation.text == "Y" | delivered_validation.text == "y") {
+            if (display_deliverystatus.text == "Returned" | returned_validation.text == "Y" | delivered_validation.text == "Y" | delivered_validation.text == "y") {
                 if (vendor_handler.delivery == 1) {
                     vendor_handler.reset1()
                     if (vendor_handler.valid2) {

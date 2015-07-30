@@ -151,7 +151,7 @@ Rectangle {
         text: "Back"
         onClicked:{
             payment_page.visible = false
-            confirmation_page.visible = true
+            address_page.visible = true
         }
     }
 }
