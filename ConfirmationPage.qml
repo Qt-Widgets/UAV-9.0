@@ -80,7 +80,7 @@ Rectangle {
         y: if (menu_page_handler.num1 == 0) {itemsordereddisplaytext.y}
            else {itemsordereddisplaytext.y + page.height*.03}
         text: if (menu_page_handler.num1 == 0) {""}
-              else {"Egg Tart" + '<br>' + "Unit Price: $ 2.15" + '<br>' + "Quantity: "+ menu_page_handler.num1}
+              else {"Egg Tart" + '<br>' + "Unit Price: $ 7.00" + '<br>' + "Quantity: "+ menu_page_handler.num1}
         font.family: "Avenir"
         font.pixelSize: page.height * 0.02
         font.letterSpacing: 2
@@ -93,7 +93,7 @@ Rectangle {
         y: if (item1confirmtext.text == "") {itemsordereddisplaytext.y + page.height*.05}
            else {item1confirmtext.y + item1confirmtext.height + page.height*.03}
         text: if (menu_page_handler.num2 == 0) {""}
-              else {"Pineapple Bun" + '<br>' + "Unit Price: $ 2.20" + '<br>' + "Quantity: "+ menu_page_handler.num2}
+              else {"Pineapple Bun" + '<br>' + "Unit Price: $ 6.00" + '<br>' + "Quantity: "+ menu_page_handler.num2}
         font.family: "Avenir"
         font.pixelSize: page.height * 0.02
         font.letterSpacing: 2
@@ -106,7 +106,7 @@ Rectangle {
         y: if (item2confirmtext.text == "") {item1confirmtext.y + item1confirmtext.height + page.height*.05}
            else {item2confirmtext.y + item2confirmtext.height + page.height*.03}
         text: if (menu_page_handler.num3 == 0) {""}
-              else {"Iced Coffee" + '<br>' + "Unit Price: $ 5.00" + '<br>' + "Quantity: "+ menu_page_handler.num3}
+              else {"Iced Coffee" + '<br>' + "Unit Price: $ 9.00" + '<br>' + "Quantity: "+ menu_page_handler.num3}
         font.family: "Avenir"
         font.pixelSize: page.height * 0.02
         font.letterSpacing: 2
@@ -119,7 +119,7 @@ Rectangle {
         y: if (item3confirmtext.text == "") {item2confirmtext.y + item2confirmtext.height + page.height*.05}
            else {item3confirmtext.y + item3confirmtext.height + page.height*.03}
         text: if (menu_page_handler.num4 == 0) {""}
-              else {"Milk Tea" + '<br>' + "Unit Price: $ 3.00" + '<br>' + "Quantity: "+ menu_page_handler.num4}
+              else {"Milk Tea" + '<br>' + "Unit Price: $ 8.00" + '<br>' + "Quantity: "+ menu_page_handler.num4}
         font.family: "Avenir"
         font.pixelSize: page.height * 0.02
         font.letterSpacing: 2
