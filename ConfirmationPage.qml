@@ -119,7 +119,7 @@ Rectangle {
         y: if (item3confirmtext.text == "") {item2confirmtext.y + item2confirmtext.height + page.height*.05}
            else {item3confirmtext.y + item3confirmtext.height + page.height*.03}
         text: if (menu_page_handler.num4 == 0) {""}
-              else {"Milk Tea" + '<br>' + "Unit Price: $ 3.00" + itemprice4.text + '<br>' + "Quantity: "+ menu_page_handler.num4}
+              else {"Milk Tea" + '<br>' + "Unit Price: $ 3.00" + '<br>' + "Quantity: "+ menu_page_handler.num4}
         font.family: "Avenir"
         font.pixelSize: page.height * 0.02
         font.letterSpacing: 2
