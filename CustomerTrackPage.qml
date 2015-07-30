@@ -74,8 +74,8 @@ Rectangle {
         MapCircle {
             id: homecoordinates
             center {
-                latitude: 22.336400
-                longitude: 114.265466
+                latitude: vendor_handler.latitude
+                longitude: vendor_handler.longitude
             }
 
             radius: if (map.zoomLevel < 14) {450}
