@@ -66,8 +66,8 @@ Rectangle {
             height: tracking_drone.height
             zoomLevel: mapslider1.value
             center {
-                latitude: targetlatitude.text
-                longitude: targetlongitude.text
+                latitude: currentlatitude.text
+                longitude: currentlongitude.text
             }
 
             MapPolyline {
