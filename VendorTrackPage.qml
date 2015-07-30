@@ -323,7 +323,7 @@ Rectangle {
         id: view_other_orders
         anchors.horizontalCenter: parent.horizontalCenter
         anchors.bottom: parent.bottom
-        anchors.bottomMargin: page.width * 0.1
+        anchors.bottomMargin: page.width * 0.12
         visible: true
         text: "View other orders"
         width: cancelreturn.width
