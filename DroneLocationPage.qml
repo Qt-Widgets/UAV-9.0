@@ -8,15 +8,14 @@ Rectangle {
     width: parent? parent.width : 500
     height: parent? parent.height : 800
     visible: true
-
     Image {
         visible: true
         anchors.right: parent.right
-        anchors.rightMargin: 20
+        anchors.rightMargin: page.width*0.05
         anchors.bottom: parent.bottom
-        anchors.bottomMargin: 20
-        width: 50
-        height: 50
+        anchors.bottomMargin: page.width*0.05
+        width: page.width*.10
+        height: page.width*.10
         source: "qrc:/logo.png"
         asynchronous : true
     }
@@ -24,7 +23,7 @@ Rectangle {
         id: dronelocation_title
         anchors.horizontalCenter: parent.horizontalCenter
         anchors.top: parent.top
-        anchors.topMargin: 50
+        anchors.topMargin: page.height * 0.03
         text: qsTr("CURRENT DRONE LOCATION")
         font.family: "Avenir"
         font.letterSpacing: 2
@@ -37,9 +36,9 @@ Rectangle {
     Map {
         id: tracking_dronelocation_map
         anchors.horizontalCenter: parent.horizontalCenter
-        y: dronelocation_title.y + dronelocation_title.height + 50
-        width: 400
-        height: 400
+        y: dronelocation_title.y + dronelocation_title.height + page.height * 0.03
+        width: page.width * 0.8
+        height: page.width * 0.6
         plugin: osmplugin2
         zoomLevel: (maximumZoomLevel)*0.95
         center {
@@ -51,14 +50,15 @@ Rectangle {
         id: beep
         anchors.horizontalCenter: parent.horizontalCenter
         width: retrieved.width
-        y: tracking_dronelocation_map.y + tracking_dronelocation_map.height + 35
+        y: tracking_dronelocation_map.y + tracking_dronelocation_map.height + page.height * 0.03
         visible: true
         text: "BEEP"
     }
     Button {
         id: retrieved
         anchors.horizontalCenter: parent.horizontalCenter
-        y: beep.y + beep.height + 20
+        width: page.width * 0.5
+        y: beep.y + beep.height + page.height * 0.03
         visible: true
         text: "Click to confirm drone retrieval"
         onClicked:{
